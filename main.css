@@ -1,0 +1,29 @@
+html {
+    font-family:'Arial Narrow', Arial, sans-serif;
+    background-color:#f9e5eb;
+}
+
+body {
+
+
+}
+
+#area1 {
+    width: 100%;
+    height: 300px;
+    overflow: scroll;
+}
+
+#area2 {
+    width: 100%;
+    height: 300px;
+    overflow: scroll;
+}
+
+#firstButton{
+    color:blue;
+}
+
+#secondButton {
+
+}
