@@ -44,27 +44,15 @@ document.getElementById("firstButton").onclick = function () {
             "cheers" becomes "eers-chay"
     */
     function encodeConsonantWord(word) {
-        const vowelsArray = ("a", "e", "i", "o", "u");
+        const vowels = /["a", "e", "i", "o", "u"]/g;
         let consWordArray = word.split("");
-        let firstCons = [];
 
         if (consWordArray.indexOf("a", "e", "i", "o", "u") == 0) {
 
         } else {
-
-
-
-            // for (let i = 0; i < consWordArray.length; i++) {
-
-            //     if (consWordArray[i] == "a" || "e" || "i" || "o" || "u"){
-            //         let 
-            //     }
-
-            // }
-
-            let cons = consWordArray.shift();
-            consWordArray.push(cons);
-            let result = consWordArray.join("") + "-" + cons + "ay";
+            let indexVowel = word.search(vowels);
+            let cons = consWordArray.splice(0, indexVowel);
+            let result = consWordArray.join("") + "-" + cons.join("") + "ay";
             return result;
         }
     }
@@ -101,6 +89,7 @@ document.getElementById("firstButton").onclick = function () {
     function encodeText(text) {
         let arrText = text.split(" ");
         let result = [];
+        
         for (let i = 0; i < arrText.length; i++) {
             result.push(encodeWord(arrText[i]));
         }
