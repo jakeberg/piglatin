@@ -26,7 +26,7 @@ document.getElementById("firstButton").onclick = function () {
     function encodeVowelWord(word) {
         let vowelWordArray = word.split("");
 
-        if (vowelWordArray.indexOf("a") == 0 || vowelWordArray.indexOf("e") == 0 || vowelWordArray.indexOf("i") == 0 || vowelWordArray.indexOf("o") == 0 || vowelWordArray.indexOf("u") == 0) {
+        if (vowelWordArray.indexOf("a", "e", "i", "o", "u") == 0) {
             let result = vowelWordArray.join("") + "yay";
             return result;
         }
@@ -44,17 +44,30 @@ document.getElementById("firstButton").onclick = function () {
             "cheers" becomes "eers-chay"
     */
     function encodeConsonantWord(word) {
-        let vowelConsArray = word.split("");
-        if (vowelConsArray.indexOf("a") == 0 || vowelConsArray.indexOf("e") == 0 || vowelConsArray.indexOf("i") == 0 || vowelConsArray.indexOf("o") == 0 || vowelConsArray.indexOf("u") == 0) {
+        const vowelsArray = ("a", "e", "i", "o", "u");
+        let consWordArray = word.split("");
+        let firstCons = [];
+
+        if (consWordArray.indexOf("a", "e", "i", "o", "u") == 0) {
 
         } else {
-            let cons = vowelConsArray.shift();
-            vowelConsArray.push(cons);
-            let result = vowelConsArray.join("") + "-yay";
+
+
+
+            // for (let i = 0; i < consWordArray.length; i++) {
+
+            //     if (consWordArray[i] == "a" || "e" || "i" || "o" || "u"){
+            //         let 
+            //     }
+
+            // }
+
+            let cons = consWordArray.shift();
+            consWordArray.push(cons);
+            let result = consWordArray.join("") + "-" + cons + "ay";
             return result;
         }
     }
-
 
     /*  
         STEP # 3: Decide whether a given word starts with a vowel sound or consonant sound,
@@ -70,7 +83,7 @@ document.getElementById("firstButton").onclick = function () {
     function encodeWord(word) {
         let vowelWordArray = word.split("");
 
-        if (vowelWordArray.indexOf("a") == 0 || vowelWordArray.indexOf("e") == 0 || vowelWordArray.indexOf("i") == 0 || vowelWordArray.indexOf("o") == 0 || vowelWordArray.indexOf("u") == 0) {
+        if (vowelWordArray.indexOf("a", "e", "i", "o", "u") == 0) {
             let resultA = vowelWordArray.join("");
             return encodeVowelWord(resultA);
         } else {
